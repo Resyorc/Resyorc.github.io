@@ -16,7 +16,8 @@ const routes = {
 };
 
 const handleLocation = async () => {
-  const path = window.location.pathname;
+  let path = window.location.pathname;
+  path = path === "/" ? path : path.replace(/\/$/, ""); // Ensure no trailing slash
   const route = routes[path] || routes[404];
   const html = await fetch(route).then((data) => data.text());
   document.getElementById("main-page").innerHTML = html;

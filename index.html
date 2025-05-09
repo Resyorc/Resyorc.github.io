@@ -3,43 +3,180 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SPA Example</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="/" onclick="route(event)">Home</a></li>
-        <li><a href="/about" onclick="route(event)">About</a></li>
-        <li><a href="/education" onclick="route(event)">Education</a></li>
-        <li><a href="/experience" onclick="route(event)">Experience</a></li>
-        <li><a href="/projects" onclick="route(event)">Projects</a></li>
-        <li><a href="/skills" onclick="route(event)">Skills</a></li>
-      </ul>
-    </nav>
+  <body class="overflow-x-hidden">
+    <!-- Navbar Section -->
+    <section
+      class="w-full px-4 mx-auto fixed top-0 z-[999] border-b-2 border-b-indigo-500 bg-white/40 backdrop-blur-md"
+    >
+      <nav class="flex flex-wrap p-6 justify-between items-center">
+        <div class="flex items-center mr-6">
+          <a href="index.html" class="text-2xl font-bold">My Portfolio</a>
+        </div>
 
-    <div>
-      <input type="checkbox" class="checkbox" id="checkbox" />
-      <label for="checkbox" class="checkbox-label">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-        <span class="ball"></span>
-      </label>
-    </div>
+        <!-- Hamburger Button (Mobile) -->
+        <button
+          id="menu-toggle"
+          class="md:hidden border border-indigo-400 p-2 rounded"
+        >
+          <img
+            src="./assets/svg/hamburger-menu-svgrepo-com.svg"
+            class="w-6 h-6"
+            alt="menu"
+          />
+        </button>
 
-    <div id="main-content">
-      <h2>Loading...</h2>
-      <!-- Tempat di mana halaman dimuat -->
-    </div>
+        <!-- Menu Items -->
+        <div
+          id="menu"
+          class="w-full md:flex md:items-center md:w-auto hidden mt-4 md:mt-0"
+        >
+          <div class="text-lg font-semibold md:flex md:space-x-4">
+            <a href="#about" class="block py-2 md:py-0">About me</a>
+            <a href="#project" class="block py-2 md:py-0">Project</a>
+            <a href="#skill" class="block py-2 md:py-0">Skills</a>
+            <a href="#contact" class="block py-2 md:py-0">Contact Me</a>
+          </div>
+        </div>
+      </nav>
+    </section>
 
-    <script src="assets/js/router.js"></script>
-    <script src="assets/js/main.js"></script>
+    <!-- About Section -->
+    <section id="about" class="w-full py-16 bg-white">
+      <div class="px-4 md:px-16 py-8 text-center">
+        <h1 class="text-5xl font-bold">About me</h1>
+        <div class="my-4">
+          <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
+        </div>
+        <h2 class="text-3xl font-bold mb-2">
+          Hi, welcome to my personal space!
+        </h2>
+        <h3 class="text-gray-600 text-lg mb-2">
+          I am an Informatics Engineering student at Telkom University Surabaya
+          who enjoys exploring technology, especially in the field of IoT and
+          web development. I always want to expand my knowledge by learning new
+          tools, frameworks, and techniques that can benefit my future life.
+        </h3>
+        <div class="w-full">
+          <div class="px-4 py-4">
+            <img
+              src="./assets/img/profile.png"
+              class="shadow-lg rounded-full max-w-full mx-auto w-48"
+              alt="profile picture"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Work Section -->
+    <section id="work" class="w-full py-22 bg-white text-center">
+      <h1 class="text-5xl font-bold">Project</h1>
+      <div class="my-4">
+        <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
+      </div>
+      <p class="text-gray-600 text-lg">Here are some of my recent projects:</p>
+      <div class="mt-4 flex justify-center gap-4">
+        <div
+          class="p-4 border rounded max-w-sm shadow-lg hover:shadow-xl transition w-full"
+        >
+          <img
+            src="./assets/img/tanihub.png"
+            alt="Project 1"
+            class="w-full max-h-64 object-contain rounded mb-4"
+          />
+          <h3 class="text-xl font-semibold">Smart Farming IoT (Tanihub)</h3>
+          <p class="text-sm text-gray-600">
+            IoT-based monitoring system for smart farming.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skill" class="w-full py-22 bg-white text-center">
+      <h1 class="text-5xl font-bold">Skills</h1>
+      <div class="my-4">
+        <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
+      </div>
+      <p class="text-gray-600 text-lg">Technologies I'm familiar with:</p>
+      <div class="mt-4 flex justify-center gap-4 flex-wrap">
+        <span
+          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
+          >HTML</span
+        >
+        <span
+          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
+          >CSS</span
+        >
+        <span
+          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
+          >JavaScript</span
+        >
+        <span
+          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
+          >Laravel</span
+        >
+        <span
+          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
+          >Tailwind</span
+        >
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="w-full py-20 mb-40 bg-white/30 backdrop-blur-md text-center"
+    >
+      <h1 class="text-5xl font-bold">Contact Me</h1>
+      <div class="my-4">
+        <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
+      </div>
+      <p class="text-gray-600 text-lg mb-10">
+        You can reach me via the following platforms:
+      </p>
+
+      <div
+        class="max-w-md mx-auto bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 space-y-4"
+      >
+        <div>
+          <h2 class="text-2xl font-semibold">Ferry Oktariansyah</h2>
+          <p class="text-gray-700">Web Developer & IoT Enthusiast</p>
+        </div>
+        <div class="text-left space-y-2">
+          <p><strong>Email:</strong> ferryoktrnsyh@gmail.com</p>
+          <p><strong>Phone:</strong> +62 898 3120 199</p>
+          <p><strong>Location:</strong> Surabaya, Indonesia</p>
+        </div>
+        <div class="flex justify-center gap-4 mt-4">
+          <a
+            href="https://www.linkedin.com/in/ferry-oktariansyah-065a42346"
+            class="text-indigo-500 hover:underline"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a
+            href="https://github.com/Resyorc"
+            class="text-indigo-500 hover:underline"
+            target="_blank"
+            >GitHub</a
+          >
+          <a
+            href="https://www.instagram.com/ferry_oktrnsyh/"
+            class="text-indigo-500 hover:underline"
+            target="_blank"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="w-full py-6 bg-gray-800 text-white text-center">
+      <p>Built with love and curiosity by Ferry © 2025.</p>
+    </section>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>

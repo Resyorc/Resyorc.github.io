@@ -4,179 +4,355 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./assets/css/style.css" rel="stylesheet" />
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Portofolio</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
   </head>
   <body class="overflow-x-hidden">
     <!-- Navbar Section -->
     <section
-      class="w-full px-4 mx-auto fixed top-0 z-[999] border-b-2 border-b-indigo-500 bg-white/40 backdrop-blur-md"
+      class="w-full px-4 mx-auto fixed top-0 z-[999] bg-[#030712] text-white"
     >
-      <nav class="flex flex-wrap p-6 justify-between items-center">
-        <div class="flex items-center mr-6">
+      <nav
+        class="container mx-auto px-4 flex flex-wrap p-6 justify-between items-center"
+      >
+        <div class="flex items-center ml">
           <a href="index.html" class="text-2xl font-bold">My Portfolio</a>
         </div>
 
         <!-- Hamburger Button (Mobile) -->
         <button
           id="menu-toggle"
-          class="md:hidden border border-indigo-400 p-2 rounded"
+          class="lg:hidden border border-[#26C3F4] p-2 rounded"
         >
           <img
             src="./assets/svg/hamburger-menu-svgrepo-com.svg"
-            class="w-6 h-6"
-            alt="menu"
+            class="w-6 h-6 invert"
+            alt="Menu"
           />
         </button>
 
         <!-- Menu Items -->
         <div
           id="menu"
-          class="w-full md:flex md:items-center md:w-auto hidden mt-4 md:mt-0"
+          class="w-full lg:flex lg:items-center lg:w-auto hidden mt-4 lg:mt-0"
         >
-          <div class="text-lg font-semibold md:flex md:space-x-4">
-            <a href="#about" class="block py-2 md:py-0">About me</a>
-            <a href="#project" class="block py-2 md:py-0">Project</a>
-            <a href="#skill" class="block py-2 md:py-0">Skills</a>
-            <a href="#contact" class="block py-2 md:py-0">Contact Me</a>
+          <div class="text-lg font-semibold lg:flex lg:space-x-4">
+            <a
+              href="#hero"
+              class="relative block py-2 px-4 lg:py-0 hover:text-[#26C3F4] transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-full after:h-[2px] after:bg-[#26C3F4] after:transform after:-translate-x-1/2 after:scale-x-0 hover:after:scale-x-70 after:transition-transform after:duration-300 after:origin-center [&.active]:after:scale-x-100 [&.active]:text-[#26C3F4]"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              class="relative block py-2 px-4 lg:py-0 hover:text-[#26C3F4] transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-full after:h-[2px] after:bg-[#26C3F4] after:transform after:-translate-x-1/2 after:scale-x-0 hover:after:scale-x-70 after:transition-transform after:duration-300 after:origin-center [&.active]:after:scale-x-100 [&.active]:text-[#26C3F4]"
+            >
+              About
+            </a>
+            <a
+              href="#skills"
+              class="relative block py-2 px-4 lg:py-0 hover:text-[#26C3F4] transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-full after:h-[2px] after:bg-[#26C3F4] after:transform after:-translate-x-1/2 after:scale-x-0 hover:after:scale-x-65 after:transition-transform after:duration-300 after:origin-center [&.active]:after:scale-x-100 [&.active]:text-[#26C3F4]"
+            >
+              Skills
+            </a>
+            <a
+              href="#project"
+              class="relative block py-2 px-4 lg:py-0 hover:text-[#26C3F4] transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-full after:h-[2px] after:bg-[#26C3F4] after:transform after:-translate-x-1/2 after:scale-x-0 hover:after:scale-x-75 after:transition-transform after:duration-300 after:origin-center [&.active]:after:scale-x-100 [&.active]:text-[#26C3F4]"
+            >
+              Project
+            </a>
+            <a
+              href="#contact"
+              class="relative block py-2 px-4 lg:py-0 hover:text-[#26C3F4] transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:w-full after:h-[2px] after:bg-[#26C3F4] after:transform after:-translate-x-1/2 after:scale-x-0 hover:after:scale-x-75 after:transition-transform after:duration-300 after:origin-center [&.active]:after:scale-x-100 [&.active]:text-[#26C3F4]"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </nav>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="w-full py-16 bg-white">
-      <div class="px-4 md:px-16 py-8 text-center">
-        <h1 class="text-5xl font-bold">About me</h1>
-        <div class="my-4">
-          <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
+    <!-- Hero Section -->
+    <section id="hero" class="w-full py-45 bg-[#030712]">
+      <div
+        class="container mx-auto flex flex-wrap justify-between items-center px-6"
+      >
+        <!-- Text Section -->
+        <div class="w-full lg:w-1/2 mb-8 lg:mb-0 inline-block align-middle">
+          <h2 class="text-white text-3xl leading-relaxed">
+            Hello,<br />
+            <span class="text-4xl lg:text-6xl text-[#26C3F4] font-bold"
+              >I'm Ferry</span
+            ><br />
+            An aspiring Web Developer & IoT learner
+          </h2>
+          <p class="text-lg mt-4 text-white">
+            I’m passionate about building websites and exploring smart
+            technologies that shape the future.
+          </p>
+          <button
+            class="rounded-full px-10 py-2 my-10 text-lg text-white border border-white"
+          >
+            Portfolio
+          </button>
         </div>
-        <h2 class="text-3xl font-bold mb-2">
-          Hi, welcome to my personal space!
-        </h2>
-        <h3 class="text-gray-600 text-lg mb-2">
-          I am an Informatics Engineering student at Telkom University Surabaya
-          who enjoys exploring technology, especially in the field of IoT and
-          web development. I always want to expand my knowledge by learning new
-          tools, frameworks, and techniques that can benefit my future life.
-        </h3>
-        <div class="w-full">
-          <div class="px-4 py-4">
-            <img
-              src="./assets/img/profile.png"
-              class="shadow-lg rounded-full max-w-full mx-auto w-48"
-              alt="profile picture"
-            />
+
+        <!-- Image Section -->
+        <div class="w-full lg:w-1/2 flex justify-center">
+          <img
+            src="./assets/img/hero-image.png"
+            class="w-142 max-w-full h-auto"
+            alt="Hero Image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="w-full py-32 bg-[#030712]">
+      <div
+        class="container mx-auto flex flex-wrap justify-between items-center px-6"
+      >
+        <!-- Image Section -->
+        <div class="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0">
+          <img
+            src="./assets/img/about-image.png"
+            class="max-w-full h-auto"
+            alt="About Image"
+          />
+        </div>
+
+        <!-- Text Section -->
+        <div class="w-full lg:w-1/2 text-white">
+          <h2 class="text-4xl lg:text-6xl font-bold">
+            About <span class="text-[#26C3F4]">Me</span>
+          </h2>
+          <p class="text-lg mt-4">
+            I’m a Web Development and IoT enthusiast who’s passionate about
+            learning and building responsive websites and smart systems through
+            continuous exploration of technology.
+          </p>
+
+          <!-- Social Icons -->
+          <div class="flex space-x-6 mt-10 invert">
+            <a href="https://www.instagram.com/ferry_oktrnsyh/" target="_blank">
+              <img
+                src="./assets/svg/instagram-svgrepo-com.svg"
+                class="w-10 h-10"
+                alt="Instagram"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ferry-oktariansyah-065a42346/"
+              target="_blank"
+            >
+              <img
+                src="./assets/svg/linkedin-svgrepo-com.svg"
+                class="w-10 h-10"
+                alt="LinkedIn"
+              />
+            </a>
+            <a href="https://github.com/Resyorc/" target="_blank">
+              <img
+                src="./assets/svg/github-svgrepo-com.svg"
+                class="w-10 h-10"
+                alt="GitHub"
+              />
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Recent Work Section -->
-    <section id="work" class="w-full py-22 bg-white text-center">
-      <h1 class="text-5xl font-bold">Project</h1>
-      <div class="my-4">
-        <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
-      </div>
-      <p class="text-gray-600 text-lg">Here are some of my recent projects:</p>
-      <div class="mt-4 flex justify-center gap-4">
-        <div
-          class="p-4 border rounded max-w-sm shadow-lg hover:shadow-xl transition w-full"
-        >
-          <img
-            src="./assets/img/tanihub.png"
-            alt="Project 1"
-            class="w-full max-h-64 object-contain rounded mb-4"
-          />
-          <h3 class="text-xl font-semibold">Smart Farming IoT (Tanihub)</h3>
-          <p class="text-sm text-gray-600">
-            IoT-based monitoring system for smart farming.
-          </p>
+    <!-- Skills Section -->
+    <section id="skills" class="w-full py-48 bg-[#030712]">
+      <div class="container mx-auto text-start text-white px-6">
+        <h2 class="text-4xl lg:text-6xl font-bold">
+          My <span class="text-[#26C3F4]">Skills</span>
+        </h2>
+        <p class="text-lg py-4">
+          A comprehensive overview of my technical and soft skills
+        </p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            class="bg-[#FFFFFF33] p-6 border rounded-lg shadow-lg hover:shadow-xl transition border-b-6 border-b-[#5EC5E3]"
+          >
+            <img
+              src="./assets/svg/material-symbols_developer-mode-tv-outline.svg"
+              class="w-8 h-8 mb-4"
+              alt="Programming"
+            />
+            <h3 class="text-lg font-semibold text-[#26C3F4]">
+              Web Development
+            </h3>
+            <p class="text-sm opacity-50 text-white">HTML, CSS, JavaScript</p>
+          </div>
+          <div
+            class="bg-[#FFFFFF33] p-6 border rounded-lg shadow-lg hover:shadow-xl transition border-b-6 border-b-[#5EC5E3]"
+          >
+            <img
+              src="./assets/svg/material-symbols_developer-mode-tv-outline.svg"
+              class="w-8 h-8 mb-4"
+              alt="Programming"
+            />
+            <h3 class="text-l font-semibold text-[#26C3F4]">
+              Internet of Things
+            </h3>
+            <p class="text-sm opacity-50 text-white">
+              C/C++, Arduino, JavaScript
+            </p>
+          </div>
+          <div
+            class="bg-[#FFFFFF33] p-6 border rounded-lg shadow-lg hover:shadow-xl transition border-b-6 border-b-[#5EC5E3]"
+          >
+            <img
+              src="./assets/svg/material-symbols_developer-mode-tv-outline.svg"
+              class="w-8 h-8 mb-4"
+              alt="Programming"
+            />
+            <h3 class="text-l font-semibold text-[#26C3F4]">
+              Artificial Intelligence
+            </h3>
+            <p class="text-sm opacity-50 text-white">Python, JavaScript</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skill" class="w-full py-22 bg-white text-center">
-      <h1 class="text-5xl font-bold">Skills</h1>
-      <div class="my-4">
-        <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
-      </div>
-      <p class="text-gray-600 text-lg">Technologies I'm familiar with:</p>
-      <div class="mt-4 flex justify-center gap-4 flex-wrap">
-        <span
-          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
-          >HTML</span
-        >
-        <span
-          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
-          >CSS</span
-        >
-        <span
-          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
-          >JavaScript</span
-        >
-        <span
-          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
-          >Laravel</span
-        >
-        <span
-          class="px-4 py-2 bg-indigo-100 rounded-full text-indigo-700 font-medium"
-          >Tailwind</span
-        >
+    <!-- Project Section -->
+    <section id="project" class="w-full py-48 bg-[#030712]">
+      <div class="container mx-auto text-center text-white px-6">
+        <h2 class="text-4xl lg:text-6xl font-bold">
+          My <span class="text-[#26C3F4]">Project</span>
+        </h2>
+        <p class="text-lg py-4">A selection of my recent work and projects</p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            class="border rounded-lg shadow-lg hover:shadow-xl transition border-b-4 border-b-[#5EC5E3] overflow-hidden"
+          >
+            <img
+              src="./assets/img/tanihub.png"
+              class="w-full h-auto block"
+              alt="Programming"
+            />
+            <div class="bg-[#FFFFFF33] p-4 text-start">
+              <h3 class="text-l font-semibold text-[#26C3F4]">
+                Smart Farming IoT (Tanihub)
+              </h3>
+              <p class="text-sm opacity-50 text-white">
+                Automated crop monitoring system
+              </p>
+            </div>
+          </div>
+          <!-- <div
+            class="border rounded-lg shadow-lg hover:shadow-xl transition border-b-4 border-b-[#5EC5E3] overflow-hidden"
+          >
+            <img
+              src="./assets/img/tanihub.png"
+              class="w-full h-auto block"
+              alt="Programming"
+            />
+            <div class="bg-[#FFFFFF33] p-4 text-start">
+              <h3 class="text-l font-semibold text-[#26C3F4]">
+                Web Development
+              </h3>
+              <p class="text-sm opacity-50 text-white">HTML, CSS, JavaScript</p>
+            </div>
+          </div>
+          <div
+            class="border rounded-lg shadow-lg hover:shadow-xl transition border-b-4 border-b-[#5EC5E3] overflow-hidden"
+          >
+            <img
+              src="./assets/img/tanihub.png"
+              class="w-full h-auto block"
+              alt="Programming"
+            />
+            <div class="bg-[#FFFFFF33] p-4 text-start">
+              <h3 class="text-l font-semibold text-[#26C3F4]">
+                Web Development
+              </h3>
+              <p class="text-sm opacity-50 text-white">HTML, CSS, JavaScript</p>
+            </div>
+          </div> -->
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section
-      id="contact"
-      class="w-full py-20 mb-40 bg-white/30 backdrop-blur-md text-center"
-    >
-      <h1 class="text-5xl font-bold">Contact Me</h1>
-      <div class="my-4">
-        <div class="bg-rose-400 w-1/4 opacity-75 rounded h-1 mx-auto"></div>
-      </div>
-      <p class="text-gray-600 text-lg mb-10">
-        You can reach me via the following platforms:
-      </p>
-
-      <div
-        class="max-w-md mx-auto bg-white/50 backdrop-blur-sm rounded-xl shadow-md p-6 space-y-4"
-      >
-        <div>
-          <h2 class="text-2xl font-semibold">Ferry Oktariansyah</h2>
-          <p class="text-gray-700">Web Developer & IoT Enthusiast</p>
-        </div>
-        <div class="text-left space-y-2">
-          <p><strong>Email:</strong> ferryoktrnsyh@gmail.com</p>
-          <p><strong>Phone:</strong> +62 898 3120 199</p>
-          <p><strong>Location:</strong> Surabaya, Indonesia</p>
-        </div>
-        <div class="flex justify-center gap-4 mt-4">
-          <a
-            href="https://www.linkedin.com/in/ferry-oktariansyah-065a42346"
-            class="text-indigo-500 hover:underline"
-            target="_blank"
-            >LinkedIn</a
+    <section id="contact" class="w-full py-48 bg-[#030712]">
+      <div class="container mx-auto text-start text-white px-6">
+        <h2 class="text-4xl lg:text-6xl font-bold">
+          Contact <span class="text-[#26C3F4]">Me</span>
+        </h2>
+        <p class="text-lg py-4">You can reach me via the following platforms</p>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            class="flex items-center gap-4 border rounded-lg shadow-lg hover:shadow-xl transition border-b-6 border-b-[#5EC5E3] overflow-hidden p-4"
           >
-          <a
-            href="https://github.com/Resyorc"
-            class="text-indigo-500 hover:underline"
-            target="_blank"
-            >GitHub</a
+            <img
+              src="./assets/svg/solar_document-linear_phone.svg"
+              class="w-24 h-24"
+              alt="Phone"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-[#26C3F4]">Phone</h3>
+              <p class="text-white opacity-80 text-sm">+62 898-3120-199</p>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-4 border rounded-lg shadow-lg hover:shadow-xl transition border-b-6 border-b-[#5EC5E3] overflow-hidden p-4"
           >
-          <a
-            href="https://www.instagram.com/ferry_oktrnsyh/"
-            class="text-indigo-500 hover:underline"
-            target="_blank"
-            >Instagram</a
+            <img
+              src="./assets/svg/solar_document-linear_location.svg"
+              class="w-24 h-24"
+              alt="Location"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-[#26C3F4]">Location</h3>
+              <p class="text-white opacity-80 text-sm">Surabaya, Indonesia</p>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-4 border rounded-lg shadow-lg hover:shadow-xl transition border-b-6 border-b-[#5EC5E3] overflow-hidden p-4"
           >
+            <img
+              src="./assets/svg/solar_document-linear_email.svg"
+              class="w-24 h-24"
+              alt="Email"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-[#26C3F4]">Email</h3>
+              <p class="text-white opacity-80 text-sm">
+                ferryoktrnsyh@gmail.com
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Footer Section -->
-    <section class="w-full py-6 bg-gray-800 text-white text-center">
-      <p>Built with love and curiosity by Ferry © 2025.</p>
+    <section class="bg-[#26C3F4] text-white py-4 text-center">
+      <div class="container mx-auto">
+        <p class="text-sm opacity-80">
+          &copy; 2025 Copyright - Ferry Oktariansyah.
+        </p>
+      </div>
     </section>
+
+    <!-- Script -->
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
